@@ -20,6 +20,7 @@
 /***************
 * Solution #2
 ***************/
+// every() method tests whether all elements in the array pass the test implemented by the provided function.
 function palindrome(str) {
     return str.split('').every((char, i) => {
         return char === str[str.length - i -1];

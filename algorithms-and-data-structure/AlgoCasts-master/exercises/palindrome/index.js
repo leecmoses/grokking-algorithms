@@ -20,10 +20,11 @@
 /***************
 * Solution #2
 ***************/
-// every() method tests whether all elements in the array pass the test implemented by the provided function.
+// every() method tests whether all elements in the array pass the test(boolean check) implemented by the provided function.
+// Not ideal solution because it requires twice the number of calculations due to double comparison.
 function palindrome(str) {
     return str.split('').every((char, i) => {
-        return char === str[str.length - i -1];
+        return char === str[str.length - i -1]; // To get the mirror side of the current element(char), -1 because of 0 index JavaScript arrays.
     });
 };
 

@@ -7,6 +7,47 @@
 //   capitalize('a lazy fox') --> 'A Lazy Fox'
 //   capitalize('look, it is working!') --> 'Look, It Is Working!'
 
-function capitalize(str) {}
+/***************
+* Solution #1
+***************/
+// Make an empty array 'words'
+// Split the input string by spaces to get an array
+// For each word in the array
+// Uppercase the first letter of the word
+// Join first letter with rest of the string
+// Push result into 'words' array
+// Join 'words' into a string and return it
+
+// function capitalize(str) {
+//     const words = [];
+    
+//     for (let word of str.split(' ')) {
+//         words.push(word[0].toUpperCase() + word.slice(1));
+//     }
+
+//     return words.join(' ');
+// };
+
+/***************
+* Solution #2
+***************/
+// Create 'result' which is the first character of the input string capitalized
+// For each character in the string if the character to the left is a 'space' then capitalize it and add it to the 'result', else add it to the 'result'
+// Can't use 'for of' loop here, but instead a traditional loop will be needed
+
+function capitalize(str) {
+    let result = str[0].toUpperCase();
+
+    for (let i = 1; i < str.length; i++) {
+        if (str[i - 1] === ' ') {
+            result += str[i].toUpperCase();
+        } else {
+            result += str[i];
+        }
+    }
+    
+    return result;
+};
+
 
 module.exports = capitalize;
